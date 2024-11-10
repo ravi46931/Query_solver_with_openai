@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Solver</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+    <h1 class="header">Text Query Solver</h1>
+    <br>
+    <div class="main">
+    <form action="/submit" method="post" >
+        <label class="message-label" for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Type your message here..." oninput="adjustInputHeight()"></textarea>
+        <br>
+        <label class="task-label" for="task" class="task_class">Task:</label>
+        <select id="task" name="task" onchange="showInputs()">
+            {% for task in tasks %}
+            <option class="option_cls" value="{{task}}">{{ task }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <div id="inputPlaces" style="display:none;" class="input_class">
+            <label class="subtask-label" for="subtask">SubTask:</label>
+            <textarea id="subtask" name="subtask" placeholder="Enter subtask..."></textarea>
+            <br>
+            <label class="language-label" for="language">Language:</label>
+            <textarea id="language" name="language" placeholder="Enter language..."></textarea>
+            <br>
+            <label class="output-label" for="output_type">Output Type:</label>
+            <textarea id="output_type" name="output_type" placeholder="Enter language..."></textarea>
+            <br>
+        </div>
+        <div class="container">
+            <input class="submit-button" type="submit" value="Submit">
+        </div>
+    </form>
+    </div>
+    <script>
+        function showInputs() {
+            var task = document.getElementById("task");
+            var inputPlaces = document.getElementById("inputPlaces");
+        
+            if (task.value === "Custom Steps") {
+                inputPlaces.style.display = "block";
+            } else {
+                inputPlaces.style.display = "none";
+            }
+        }
+        function adjustInputHeight() {
+            const input = document.getElementById('message');
+            input.style.height = 'auto'; // Reset height to auto to properly calculate scrollHeight
+            input.style.height = Math.min(input.scrollHeight, 200) + 'px';  // Set height to scrollHeight
+        }
+
+      
+
+
+
+
+        </script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin-top: 3%;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(77, 71, 83);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  color: rgb(185, 240, 250);
+}
+.message-label,
+.task-label {
+  font-size: larger;
+  color: aquamarine;
+}
+.subtask-label,
+.language-label,
+.output-label {
+  font-size: medium;
+  color: #ecf4da;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+}
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+#message {
+  width: 37em;
+  height: 15%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none; /* Disable resizing */
+  overflow-y: auto; /* Enable vertical scroll */
+  outline: none;
+  background-color: rgb(201, 255, 255);
+  margin-bottom: 2em;
+}
+
+label {
+  display: block; /* Make the label a block element */
+  margin-bottom: 5px; /* Add some bottom margin for spacing */
+}
+
+#task {
+  display: flex;
+  margin-left: 10%;
+  border-radius: 5px;
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+  border-color: aliceblue;
+  font-size: 14px;
+}
+
+.submit-button {
+  border-radius: 5px;
+  width: 65px;
+  height: 31px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.submit-button:hover {
+  background-color: rgb(16, 52, 58);
+  color: aliceblue;
+}
+
+#subtask,
+#language,
+#output_type {
+  width: 15em;
+  padding: 3.5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: none;
+  overflow-y: auto;
+  outline: none;
+  background-color: rgb(236 230 254);
+  margin-bottom: 0.5em;
+}
+
+/*  Response Page */
+
+.back-button {
+  cursor: pointer;
+  border-radius: 5px;
+  width: auto;
+  margin-left: 350px;
+  display: flex;
+  padding: 10px 20px; /* Example padding */
+  background-color: #007bff; /* Example background color */
+  color: #fff; /* Example text color */
+  border: none; /* Remove border */
+  border-radius: 5px;
+}
+.back-button:hover {
+  color: antiquewhite;
+}
+.center-text {
+  padding: 20px;
+  margin-top: 10px;
+  flex-grow: 1;
+  text-align: justify;
+  margin-left: 330px;
+  margin-right: 330px;
+  color: rgb(240, 242, 255);
+  font-size: 16px;
+}
+.response-text {
+  display: flex;
+  margin-left: 350px;
+  margin-bottom: -1em;
+  font-size: large;
+  font-weight: 450;
+  color: #64ff42;
+}
+.back-link {
+  /* Add your styles for the anchor tag here */
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+}
+
+pre {
+  padding: 10px;
+
+  border-radius: 5px;
+  white-space: pre-wrap; /* Wrap long lines */
+}
